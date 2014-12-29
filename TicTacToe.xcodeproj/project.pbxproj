@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3112A3DF1A4DD61F00BF6BCB /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3112A3DE1A4DD61F00BF6BCB /* GridView.m */; };
+		3112A3E21A51EF5B00BF6BCB /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3112A3E11A51EF5B00BF6BCB /* HudView.m */; };
 		312BBF641A49F4FD00F23DDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 312BBF631A49F4FD00F23DDC /* main.m */; };
 		312BBF671A49F4FD00F23DDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 312BBF661A49F4FD00F23DDC /* AppDelegate.m */; };
 		312BBF6D1A49F4FD00F23DDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312BBF6B1A49F4FD00F23DDC /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		3112A3DD1A4DD61F00BF6BCB /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
 		3112A3DE1A4DD61F00BF6BCB /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
+		3112A3E01A51EF5B00BF6BCB /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
+		3112A3E11A51EF5B00BF6BCB /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 		312BBF5E1A49F4FD00F23DDC /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		312BBF621A49F4FD00F23DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		312BBF631A49F4FD00F23DDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 				312BBF8B1A49F59E00F23DDC /* GameViewController.m */,
 				3112A3DD1A4DD61F00BF6BCB /* GridView.h */,
 				3112A3DE1A4DD61F00BF6BCB /* GridView.m */,
+				3112A3E01A51EF5B00BF6BCB /* HudView.h */,
+				3112A3E11A51EF5B00BF6BCB /* HudView.m */,
 				312BBF6B1A49F4FD00F23DDC /* Main.storyboard */,
 				312BBF6E1A49F4FD00F23DDC /* Images.xcassets */,
 				312BBF701A49F4FD00F23DDC /* LaunchScreen.xib */,
@@ -231,6 +236,7 @@
 			files = (
 				312BBF8C1A49F59E00F23DDC /* GameViewController.m in Sources */,
 				312BBF671A49F4FD00F23DDC /* AppDelegate.m in Sources */,
+				3112A3E21A51EF5B00BF6BCB /* HudView.m in Sources */,
 				312BBF891A49F55D00F23DDC /* OpeningViewController.m in Sources */,
 				3112A3DF1A4DD61F00BF6BCB /* GridView.m in Sources */,
 				312BBF641A49F4FD00F23DDC /* main.m in Sources */,

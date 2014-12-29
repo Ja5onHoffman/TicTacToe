@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GridView.h"
+#import "HudView.h"
 
 
 @interface GameViewController ()
@@ -264,10 +265,12 @@
     if (self.playerIsX) {
         self.playerScore++;
         self.playerScoreLabel.text = [NSString stringWithFormat:@"%i", self.playerScore];
-        
+        HudView *hudView = [HudView hudInView:self.navigationController.view withMessage:@"X Won!" animated:YES];
+
     } else {
         self.computerScore++;
         self.computerScoreLabel.text = [NSString stringWithFormat:@"%i", self.computerScore];
+        HudView *hudView = [HudView hudInView:self.navigationController.view withMessage:@"O Won!" animated:YES];
     }
 }
 
