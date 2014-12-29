@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSArray *buttonIndex;
 @property (nonatomic, strong) GridView *gridView;
 @property (nonatomic) BOOL playerTurn;
+@property (nonatomic) int playerScore;
+@property (nonatomic) int computerScore;
 @property (nonatomic) int turn;
 
 @property (weak, nonatomic) IBOutlet UIButton *button1;
@@ -30,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *button7;
 @property (weak, nonatomic) IBOutlet UIButton *button8;
 @property (weak, nonatomic) IBOutlet UIButton *button9;
+@property (weak, nonatomic) IBOutlet UILabel *playerScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *computerScoreLabel;
 
 @end
 
@@ -43,25 +47,24 @@
     
     self.navigationController.navigationBarHidden = YES;
     NSLog(@"playerChoice %d", self.playerIsX);
-    
+    self.playerScore = 0;
+    self.computerScore = 0;
+    self.playerScoreLabel.text = [NSString stringWithFormat:@"%i", self.playerScore];
+    self.computerScoreLabel.text = [NSString stringWithFormat:@"%i", self.computerScore];
     
     // Using Objective-C's version of a 2D array
     NSMutableArray *row1 = [NSMutableArray arrayWithObjects:@0, @0, @0, nil];
     NSMutableArray *row2 = [NSMutableArray arrayWithObjects:@0, @0, @0, nil];
     NSMutableArray *row3 = [NSMutableArray arrayWithObjects:@0, @0, @0, nil];
-    self.gameBoard = [NSMutableArray arrayWithObjects:row1,
-                                                      row2,
-                                                      row3, nil];
+    self.gameBoard = [NSMutableArray arrayWithObjects:row1, row2, row3, nil];
     
     // Button 2D array that mirrors the gameboard
     self.buttonIndex = @[@[self.button1, self.button2, self.button3],
-                         
                          @[self.button4, self.button5, self.button6],
-                         
                          @[self.button7, self.button8, self.button9]];
     
     // Not currently used but will be for keeping score
-    self.score = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"X", @0, @"O", @0, nil];
+    /*self.score = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"X", self.playerScore, @"O", self.computerScore, nil]; */
     
     // Track turns with a turn counter
     self.turn = 0;
@@ -184,36 +187,88 @@
     // Would like to come up with a more elegant version of this instead of forcing it with if statements
     if (self.turn >= 5) {
     
-    if (gameBoard[0][0] == gameBoard[0][1] && gameBoard[0][1] == gameBoard[0][2]) {
-        
-    } else if (gameBoard[1][0] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[1][2]) {
-        NSLog(@"Winner");
-
-    } else if (gameBoard[2][0] == gameBoard[2][1] && gameBoard[2][1] == gameBoard[2][2]) {
-        NSLog(@"Winner");
-
-    } else if (gameBoard[0][0] == gameBoard[1][0] && gameBoard[1][0] == gameBoard[2][0]) {
-        NSLog(@"Winner");
-
-    } else if (gameBoard[0][1] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][1]) {
-        NSLog(@"Winner");
-
-    } else if (gameBoard[0][2] == gameBoard[1][2] && gameBoard[1][2] == gameBoard[2][2]) {
-        NSLog(@"Winner");
-
-    } else if (gameBoard[0][0] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][2]) {
-        NSLog(@"Winner");
-
-    } else if (gameBoard[0][2] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][0]) {
-        NSLog(@"Winner");
-
-    } else {
-        NSLog(@"No winner");
+        if (gameBoard[0][0] == gameBoard[0][1] && gameBoard[0][1] == gameBoard[0][2]) {
+            if ([gameBoard[0][0] isEqual:@1]) {
+                NSLog(@"Player wins");
+            } else {
+                NSLog(@"Computer wins");
+            }
+            [self endGame];
+            
+        } else if (gameBoard[1][0] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[1][2]) {
+            if ([gameBoard[1][0] isEqual:@1]) {
+                NSLog(@"Player wins");
+            } else {
+                NSLog(@"Computer wins");
+            }
+            [self endGame];
+            
+        } else if (gameBoard[2][0] == gameBoard[2][1] && gameBoard[2][1] == gameBoard[2][2]) {
+            if ([gameBoard[2][0] isEqual:@1]) {
+                NSLog(@"Player wins");
+            } else {
+                NSLog(@"Computer wins");
+            }
+            [self endGame];
+            
+        } else if (gameBoard[0][0] == gameBoard[1][0] && gameBoard[1][0] == gameBoard[2][0]) {
+            if ([gameBoard[0][0] isEqual:@1]) {
+                NSLog(@"Player wins");
+            } else {
+                NSLog(@"Computer wins");
+            }
+            [self endGame];
+            
+        } else if (gameBoard[0][1] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][1]) {
+            if ([gameBoard[0][1] isEqual:@1]) {
+                NSLog(@"Player wins");
+            } else {
+                NSLog(@"Computer wins");
+            }
+            [self endGame];
+            
+        } else if (gameBoard[0][2] == gameBoard[1][2] && gameBoard[1][2] == gameBoard[2][2]) {
+            if ([gameBoard[0][2] isEqual:@1]) {
+                NSLog(@"Player wins");
+            } else {
+                NSLog(@"Computer wins");
+            }
+            [self endGame];
+            
+        } else if (gameBoard[0][0] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][2]) {
+            if ([gameBoard[0][0] isEqual:@1]) {
+                NSLog(@"Player wins");
+            } else {
+                NSLog(@"Computer wins");
+            }
+            [self endGame];
+            
+        } else if (gameBoard[0][2] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][0]) {
+            if ([gameBoard[0][2] isEqual:@1]) {
+                NSLog(@"Player wins");
+            } else {
+                NSLog(@"Computer wins");
+            }
+            [self endGame];
+            
+        } else {
+            NSLog(@"No winner");
         
         }
     }
-    
+}
 
+
+- (void)endGame
+{
+    if (self.playerIsX) {
+        self.playerScore++;
+        self.playerScoreLabel.text = [NSString stringWithFormat:@"%i", self.playerScore];
+        
+    } else {
+        self.computerScore++;
+        self.computerScoreLabel.text = [NSString stringWithFormat:@"%i", self.computerScore];
+    }
 }
 
 @end
