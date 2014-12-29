@@ -189,7 +189,7 @@
     if (self.turn >= 5) {
     
         if (gameBoard[0][0] == gameBoard[0][1] && gameBoard[0][1] == gameBoard[0][2]) {
-            if ([gameBoard[0][0] isEqual:@1]) {
+            if (self.playerIsX || self.playerIsO) {
                 NSLog(@"Player wins");
             } else {
                 NSLog(@"Computer wins");
@@ -197,7 +197,7 @@
             [self endGame];
             
         } else if (gameBoard[1][0] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[1][2]) {
-            if ([gameBoard[1][0] isEqual:@1]) {
+            if (self.playerIsX || self.playerIsO) {
                 NSLog(@"Player wins");
             } else {
                 NSLog(@"Computer wins");
@@ -205,7 +205,7 @@
             [self endGame];
             
         } else if (gameBoard[2][0] == gameBoard[2][1] && gameBoard[2][1] == gameBoard[2][2]) {
-            if ([gameBoard[2][0] isEqual:@1]) {
+            if (self.playerIsX || self.playerIsO) {
                 NSLog(@"Player wins");
             } else {
                 NSLog(@"Computer wins");
@@ -213,7 +213,7 @@
             [self endGame];
             
         } else if (gameBoard[0][0] == gameBoard[1][0] && gameBoard[1][0] == gameBoard[2][0]) {
-            if ([gameBoard[0][0] isEqual:@1]) {
+            if (self.playerIsX || self.playerIsO) {
                 NSLog(@"Player wins");
             } else {
                 NSLog(@"Computer wins");
@@ -221,7 +221,7 @@
             [self endGame];
             
         } else if (gameBoard[0][1] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][1]) {
-            if ([gameBoard[0][1] isEqual:@1]) {
+            if (self.playerIsX || self.playerIsO) {
                 NSLog(@"Player wins");
             } else {
                 NSLog(@"Computer wins");
@@ -229,7 +229,7 @@
             [self endGame];
             
         } else if (gameBoard[0][2] == gameBoard[1][2] && gameBoard[1][2] == gameBoard[2][2]) {
-            if ([gameBoard[0][2] isEqual:@1]) {
+            if (self.playerIsX || self.playerIsO) {
                 NSLog(@"Player wins");
             } else {
                 NSLog(@"Computer wins");
@@ -237,7 +237,7 @@
             [self endGame];
             
         } else if (gameBoard[0][0] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][2]) {
-            if ([gameBoard[0][0] isEqual:@1]) {
+            if (self.playerIsX || self.playerIsO) {
                 NSLog(@"Player wins");
             } else {
                 NSLog(@"Computer wins");
@@ -245,7 +245,7 @@
             [self endGame];
             
         } else if (gameBoard[0][2] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][0]) {
-            if ([gameBoard[0][2] isEqual:@1]) {
+            if (self.playerIsX || self.playerIsO) {
                 NSLog(@"Player wins");
             } else {
                 NSLog(@"Computer wins");
@@ -263,14 +263,16 @@
 - (void)endGame
 {
     if (self.playerIsX) {
+        
         self.playerScore++;
         self.playerScoreLabel.text = [NSString stringWithFormat:@"%i", self.playerScore];
-        HudView *hudView = [HudView hudInView:self.navigationController.view withMessage:@"X Won!" animated:YES];
+        HudView *hudView = [HudView hudInView:self.navigationController.view withMessage:@"Player Won!" animated:YES];
 
     } else {
+        
         self.computerScore++;
         self.computerScoreLabel.text = [NSString stringWithFormat:@"%i", self.computerScore];
-        HudView *hudView = [HudView hudInView:self.navigationController.view withMessage:@"O Won!" animated:YES];
+        HudView *hudView = [HudView hudInView:self.navigationController.view withMessage:@"Computer Won!" animated:YES];
     }
 }
 

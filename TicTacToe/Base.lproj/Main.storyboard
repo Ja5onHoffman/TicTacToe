@@ -206,7 +206,7 @@
                         <outlet property="button8" destination="dsP-gk-cEI" id="gKr-Ha-lsw"/>
                         <outlet property="button9" destination="JOB-iW-OG1" id="6n6-I6-EPb"/>
                         <outlet property="computerScoreLabel" destination="Okp-qd-lDV" id="vPq-gV-7fx"/>
-                        <outlet property="playerScoreLabel" destination="Okp-qd-lDV" id="ZNQ-7r-db0"/>
+                        <outlet property="playerScoreLabel" destination="VXP-rO-fMz" id="0Qi-1o-6V4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXx-5Q-8h3" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,5 +11,6 @@
 @interface GameViewController : UIViewController
 
 @property (nonatomic) BOOL playerIsX;
+@property (nonatomic) BOOL playerIsO;
 
 @end

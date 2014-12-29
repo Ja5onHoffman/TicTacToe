@@ -38,13 +38,14 @@
     if ([segue.identifier isEqualToString:@"xButtonSelected"]) {
         GameViewController *gvc = segue.destinationViewController;
         gvc.playerIsX = YES;
+        gvc.playerIsO = NO;
         
     }
     
     if ([segue.identifier isEqualToString:@"oButtonSelected"]) {
         GameViewController *gvc = segue.destinationViewController;
         gvc.playerIsX = NO;
-        
+        gvc.playerIsO = YES;
     }
 }
 
