@@ -42,9 +42,7 @@
 @implementation GameViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+    [super viewDidLoad];    
     
     self.navigationController.navigationBarHidden = YES;
     NSLog(@"playerChoice %d", self.playerIsX);
@@ -180,7 +178,6 @@
 
 - (void)checkForWinner
 {
-    
     // Doesn't determine if X or O is winner yet
     NSLog(@"turn %d", self.turn);
     NSArray *gameBoard = [self.gameBoard copy];
@@ -260,9 +257,32 @@
 }
 
 
+/*
+- (void)takeTurn
+{
+    NSArray *gameBoard = [self.gameBoard copy];
+    
+    if (gameBoard[0][0] == gameBoard[0][1] || gameBoard[2][2] == gameBoard[1][2]) {
+        // gameBoard[0][2];
+    } else if (gameBoard[1][0] == gameBoard[1][1]) {
+        // gameboard[1][2]
+    } else if (gameBoard[2][0] == gameBoard[2][1]) {
+        // gameBoard[2][2]
+    } else if (gameBoard)
+} */
+
+/*
+ *
+ *  00 01 02
+ *  10 11 12
+ *  20 21 22
+ *
+ */
+
 - (void)endGame
 {
-    if (self.playerIsX) {
+    // Redundant here. Needs 'player wins' or 'player loses'
+    if (self.playerIsX || self.playerIsO) {
         
         self.playerScore++;
         self.playerScoreLabel.text = [NSString stringWithFormat:@"%i", self.playerScore];

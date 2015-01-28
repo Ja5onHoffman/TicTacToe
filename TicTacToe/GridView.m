@@ -32,7 +32,6 @@
     [[UIColor blackColor] setStroke];
     
     [path stroke];
-
 }
 
 
